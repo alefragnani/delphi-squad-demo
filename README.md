@@ -1,4 +1,4 @@
-# Delphi Squad Sample
+# Delphi Squad Demo
 
 Projeto exemplo usado na apresentação do **Delphi Squad Floripa**, sobre **Automação de Build**
 
