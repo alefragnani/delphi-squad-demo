@@ -1,0 +1,1 @@
+%1\Coverage\CodeCoverage.exe -e %1\Bin\Project1Tests.exe -m %1\Bin\Project1Tests.map -sd %1\src -u uCalculadora.pas -html -emma -xml -od %1\Bin\Coverage

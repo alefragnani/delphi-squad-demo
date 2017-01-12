@@ -1,0 +1,11 @@
+**/*.dcu
+**/*.~pas
+**/*.~dfm
+**/*.~dpr
+*.local
+__history
+__recovery
+Bin
+Lib
+Artifacts
+dunit
