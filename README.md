@@ -6,8 +6,6 @@ Projeto exemplo usado na apresentação do **Delphi Squad Floripa**, sobre **Aut
 
 Composto por um aplicativo básico, juntamente com seus testes unitários. Ambos terão sua compilação/execução automatizada pelo **FinalBuilder** e publicados no **Jenkins**. A publicação no **Jenkins** irá contar com **Relatório de Testes Automatizados** e **Cobertura de Código**.
 
-> As configurações do job do Jenkins para o projeto serão incluídas depois do evento.
-
 ## Ferramentas de Apoio
 
 * Para a Automação de Compilação será utilizado o **FinalBuilder**
