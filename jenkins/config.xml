@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>file:///C:\Delphi\delphi-squad-demo</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.SCMTrigger>
+      <spec>* * * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.BatchFile>
+      <command>&quot;C:\Program Files\FinalBuilder 8\fbcmd.exe&quot; %WORKSPACE%\Build.fbp8</command>
+    </hudson.tasks.BatchFile>
+  </builders>
+  <publishers>
+    <hudson.plugins.nunit.NUnitPublisher plugin="nunit@0.18">
+      <testResultsPattern>Artifacts\dunit-report.xml</testResultsPattern>
+      <debug>false</debug>
+      <keepJUnitReports>false</keepJUnitReports>
+      <skipJUnitArchiver>false</skipJUnitArchiver>
+      <failIfNoResults>true</failIfNoResults>
+    </hudson.plugins.nunit.NUnitPublisher>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>Artifacts\Build.zip</artifacts>
+      <allowEmptyArchive>false</allowEmptyArchive>
+      <onlyIfSuccessful>false</onlyIfSuccessful>
+      <fingerprint>false</fingerprint>
+      <defaultExcludes>true</defaultExcludes>
+      <caseSensitive>true</caseSensitive>
+    </hudson.tasks.ArtifactArchiver>
+    <htmlpublisher.HtmlPublisher plugin="htmlpublisher@1.12">
+      <reportTargets>
+        <htmlpublisher.HtmlPublisherTarget>
+          <reportName>Relatório de Cobertura de Código</reportName>
+          <reportDir>Artifacts/Coverage</reportDir>
+          <reportFiles>CodeCoverage_summary.html</reportFiles>
+          <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
+          <keepAll>false</keepAll>
+          <allowMissing>false</allowMissing>
+        </htmlpublisher.HtmlPublisherTarget>
+      </reportTargets>
+    </htmlpublisher.HtmlPublisher>
+    <hudson.plugins.emma.EmmaPublisher plugin="emma@1.29">
+      <includes>Artifacts/Coverage/CodeCoverage_Summary.xml</includes>
+      <healthReports>
+        <minClass>0</minClass>
+        <maxClass>100</maxClass>
+        <minMethod>0</minMethod>
+        <maxMethod>70</maxMethod>
+        <minBlock>0</minBlock>
+        <maxBlock>80</maxBlock>
+        <minLine>0</minLine>
+        <maxLine>80</maxLine>
+        <minCondition>0</minCondition>
+        <maxCondition>80</maxCondition>
+      </healthReports>
+    </hudson.plugins.emma.EmmaPublisher>
+  </publishers>
+  <buildWrappers/>
+</project>
