@@ -13,8 +13,12 @@ type
     pbSomar: TButton;
     pbSubtrair: TButton;
     lbResultado: TLabel;
+    pbMultiplicar: TButton;
+    pbDividir: TButton;
     procedure pbSomarClick(Sender: TObject);
     procedure pbSubtrairClick(Sender: TObject);
+    procedure pbMultiplicarClick(Sender: TObject);
+    procedure pbDividirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,6 +31,16 @@ var
 implementation
 
 {$R *.DFM}
+
+procedure TForm1.pbDividirClick(Sender: TObject);
+begin
+  lbResultado.Caption := FloatToStr(StrToInt(edValor1.Text) / StrToInt(edValor2.Text));
+end;
+
+procedure TForm1.pbMultiplicarClick(Sender: TObject);
+begin
+  lbResultado.Caption := IntToStr(StrToInt(edValor1.Text) * StrToInt(edValor2.Text));
+end;
 
 procedure TForm1.pbSomarClick(Sender: TObject);
 begin

@@ -1,9 +1,10 @@
 object Form1: TForm1
   Left = 628
   Top = 209
+  ActiveControl = edValor1
   Caption = 'Form1'
-  ClientHeight = 186
-  ClientWidth = 312
+  ClientHeight = 226
+  ClientWidth = 303
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,8 +15,8 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object lbResultado: TLabel
-    Left = 166
-    Top = 96
+    Left = 173
+    Top = 134
     Width = 80
     Height = 13
     Caption = 'RESULTADO:'
@@ -59,5 +60,23 @@ object Form1: TForm1
     Caption = 'S&ubtrair'
     TabOrder = 3
     OnClick = pbSubtrairClick
+  end
+  object pbMultiplicar: TButton
+    Left = 66
+    Top = 141
+    Width = 75
+    Height = 25
+    Caption = '&Multiplicar'
+    TabOrder = 4
+    OnClick = pbMultiplicarClick
+  end
+  object pbDividir: TButton
+    Left = 66
+    Top = 172
+    Width = 75
+    Height = 25
+    Caption = '&Dividir'
+    TabOrder = 5
+    OnClick = pbDividirClick
   end
 end
