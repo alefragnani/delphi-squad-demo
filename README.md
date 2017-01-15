@@ -15,6 +15,12 @@ Composto por um aplicativo básico, juntamente com seus testes unitários. Ambos
 
 > Para facilitar a construção do exemplo, as ferramentas gratuitas já encontram-se no repositório: Jenkins, DUnit e Delphi Code Coverage
 
+## Configurações
+
+As configurações necessárias do **FinalBuilder** e do **Jenkins** estão documentadas num arquivo `readme.md` nas suas respectivas pastas. 
+
+Para o **Finalbuilder** encontra-se anexo um _print_ de como deveria ficar o script depois de pronto. Para o **Jenkins** encontra-se anexo um _template_ do job, para fins comparativos.
+
 ## Licença
 
 [MIT](LICENSE.md) &copy; Alessandro Fragnani 
