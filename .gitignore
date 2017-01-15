@@ -3,6 +3,9 @@
 **/*.~dfm
 **/*.~dpr
 *.local
+*.identcache
+*.stat
+*.res
 __history
 __recovery
 Bin
