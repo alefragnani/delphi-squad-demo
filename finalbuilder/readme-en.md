@@ -1,6 +1,6 @@
-# Configuração do FinalBuilder
+# FinalBuilder Configuration
 
-## Compilação Básica
+## Basic Build
 
 1. Create Directory
 
@@ -13,8 +13,8 @@
 
 ```
   Project file: %FBPROJECTDIR%\src\Project1.dpr
-  Compiler version: <sua versão do Delphi>
-  Options source: [x] Load settings from project file: [x] marcar todas as abaixo 
+  Compiler version: <your Delphi version>
+  Options source: [x] Load settings from project file: [x] check all below 
 ```
 
 3. Copy File(s)
@@ -32,14 +32,14 @@
   Files: *.*
 ```
 
-## Compilação com DUnit
+## DUnit Build
 
 1. Build Delphi Win32
 
 ```
   Project file: %FBPROJECTDIR%\tests\Project1Tests.dpr 
-  Compiler version: <sua versão do Delphi>
-  Options source: [x] Load settings from project file: [x] marcar todas as abaixo 
+  Compiler version: <your Delphi version>
+  Options source: [x] Load settings from project file: [x] check all below 
 ```
 
 2. Run DOS Command
@@ -56,7 +56,7 @@
   Destination: %FBPROJECTDIR%\Artifacts
 ```
 
-## Compilação com Code Coverage
+## Code Coverage Build
 
 1. Create Directory
 

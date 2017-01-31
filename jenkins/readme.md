@@ -32,7 +32,7 @@ Depois disso será necessário instalar 3 _plugins_ para que seja possível visu
   "C:\program files\FinalBuilder 8\FBCMD.exe" /p"%WORKSPACE%\Build.fbp8"
 ```
 
-4. Ações Pós Build / Arquivar os Artefados: 
+4. Ações Pós Build / Arquivar os Artefatos: 
 
 ```
   Artifacts/Build.zip
