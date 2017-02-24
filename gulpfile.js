@@ -32,18 +32,43 @@ gulp.task("compile", ["create-folders"], function() {
   gutil.log(__dirname);
   pp.chdir(path.join(__dirname, "src"));
   gutil.log('compile-entrando-spawn');
-  var bb = cp.spawn(path.join(__dirname, 'src\\dcc.bat'));
-  bb.stdout.on('data', function (data) {
-    gutil.log(data.toString());
+  var bb = cp.spawnSync(path.join(__dirname, 'src\\dcc.bat'));
+  //gutil.log(bb);
+  gutil.log(bb.output.toString());
+  // bb.stdout.on('data', function (data) {
+  //   gutil.log(data.toString());
+  // });
+  // bb.stderr.on('data', function (data) {
+  //   gutil.log('ERRO: ' + data.toString());
+  // });
+  // bb.on('exit', function (code) {
+  //   console.log('child process exited with code ' + code.toString());
+  //   pp.chdir("..\\");
+  return gutil.log('COMPILE exit');
   });
-  bb.stderr.on('data', function (data) {
-    gutil.log('ERRO: ' + data.toString());
-  });
-  bb.on('exit', function (code) {
-    console.log('child process exited with code ' + code.toString());
-    pp.chdir("..\\");
-    return gutil.log('COMPILE exit');
-  });
+// // compile
+// gulp.task("compile", ["create-folders"], function() {
+//   gutil.log('compile-entrando-chdir');
+//   gutil.log(__dirname);
+//   pp.chdir(path.join(__dirname, "src"));
+//   gutil.log('compile-entrando-spawn');
+//   var bb = cp.spawn(path.join(__dirname, 'src\\dcc.bat'));
+//   bb.stdout.on('data', function (data) {
+//     gutil.log(data.toString());
+//   });
+//   bb.stderr.on('data', function (data) {
+//     gutil.log('ERRO: ' + data.toString());
+//   });
+//   bb.on('exit', function (code) {
+//     console.log('child process exited with code ' + code.toString());
+//     pp.chdir("..\\");
+//     return gutil.log('COMPILE exit');
+//   });
+
+
+
+
+  ////////////////////////////////
 
   // var bb = cp.spawn('D:\\Program Files\\Embarcadero\\Studio\\17.0\\bin\\DCC32.EXE', ['Project1.dpr', '-B   -NUD:\\_Fragnani\\_Apps\\GitHub\\delphi-squad-demo\\Lib  -UD:\\_Fragnani\\_Apps\\GitHub\\delphi-squad-demo\\src']);
 
@@ -82,25 +107,26 @@ gulp.task("compile", ["create-folders"], function() {
   //   return gutil.log('COMPILE');
   // });
 
-});
+//});
 
 gulp.task("compile-tests", ["compile"], function() {
   gutil.log('compile-tests-entrando-chdir');
   gutil.log(__dirname);
   pp.chdir(path.join(__dirname, "tests"));
   gutil.log('compile-tests-entrando-spawn');
-  var bb = cp.spawn(path.join(__dirname, 'tests\\dcc.bat'));
-  bb.stdout.on('data', function (data) {
-    gutil.log(data.toString());
-  });
-  bb.stderr.on('data', function (data) {
-    gutil.log('ERRO: ' + data.toString());
-  });
-  bb.on('exit', function (code) {
-    console.log('child process exited with code ' + code.toString());
-    pp.chdir("..\\");
+  var bb = cp.spawnSync(path.join(__dirname, 'tests\\dcc.bat'));
+  gutil.log(bb.output.toString());
+  // bb.stdout.on('data', function (data) {
+  //   gutil.log(data.toString());
+  // });
+  // bb.stderr.on('data', function (data) {
+  //   gutil.log('ERRO: ' + data.toString());
+  // });
+  // bb.on('exit', function (code) {
+  //   console.log('child process exited with code ' + code.toString());
+  //   pp.chdir("..\\");
     return gutil.log('COMPILE-TESTS exit');
-  });
+//  });
 });
 // // compile
 // gulp.task("compile", ["create-folders"], function() {
@@ -124,18 +150,19 @@ gulp.task("unit-test", ["compile-tests"], function() {
   gutil.log(__dirname);
   pp.chdir(path.join(__dirname, "Bin"));
   gutil.log('unit-test-spawn');
-  var bb = cp.spawn(path.join(__dirname, 'Bin\\Project1Tests.exe'));
-  bb.stdout.on('data', function (data) {
-    gutil.log(data.toString());
-  });
-  bb.stderr.on('data', function (data) {
-    gutil.log('ERRO: ' + data.toString());
-  });
-  bb.on('exit', function (code) {
-    console.log('child process exited with code ' + code.toString());
-    pp.chdir("..\\");
+  var bb = cp.spawnSync(path.join(__dirname, 'Bin\\Project1Tests.exe'));
+  gutil.log(bb.output.toString());
+  // bb.stdout.on('data', function (data) {
+  //   gutil.log(data.toString());
+  // });
+  // bb.stderr.on('data', function (data) {
+  //   gutil.log('ERRO: ' + data.toString());
+  // });
+  // bb.on('exit', function (code) {
+  //   console.log('child process exited with code ' + code.toString());
+  //   pp.chdir("..\\");
     return gutil.log('UNIT-TEST exit');
-  });
+//  });
 });
 
 // run code coverage
