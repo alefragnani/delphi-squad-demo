@@ -6,6 +6,7 @@
 *.identcache
 *.stat
 *.res
+node_modules
 __history
 __recovery
 Bin

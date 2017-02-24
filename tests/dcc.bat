@@ -1,0 +1,1 @@
+"D:\Program Files\Embarcadero\Studio\17.0\bin\DCC32.EXE" Project1Tests.dpr -B -E..\Bin -NU..\Lib -GD

@@ -5,7 +5,7 @@ program Project1Tests;
 {$R *.res}
 
 uses
-  SysUtils,
+  System.SysUtils,
   TestFrameWork,
   TextTestRunner,
   XMLTestRunnerNUnit in 'XMLTestRunnerNUnit.pas',

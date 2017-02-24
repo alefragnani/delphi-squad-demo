@@ -37,8 +37,8 @@ unit XMLTestRunnerNUnit;
 
 interface
 uses
-  SysUtils,
-  Classes,
+  System.SysUtils,
+  System.Classes,
   TestFramework;
 
 const
@@ -96,7 +96,7 @@ function RunRegisteredTests(outputFile:String=DEFAULT_FILENAME) : TTestResult; o
 
 implementation
 
-uses Vcl.Forms, Windows;
+uses Vcl.Forms, WinApi.Windows;
 
 const
    CRLF = #13#10;
