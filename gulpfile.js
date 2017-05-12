@@ -1,10 +1,29 @@
 // grab our gulp packages
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
+    runSequence = require('run-sequence'),
     path = require('path'),
     fs = require('fs'),
     cp = require('child_process'),
     pp = require('process');
+
+// This will run in this order: 
+// * create-folders
+// * compile the main project
+// * compile the tests
+// * run the tests
+// * coverage
+// * zip 
+// * Finally call the callback function 
+gulp.task('build', function(callback) {
+  runSequence('create-folders',
+              'compile',
+              'compile-tests',
+              'unit-test',
+              'code-coverage',
+              'zip',
+              callback);
+});
 
 // the default task is.....
 gulp.task('default', ["create-folders"]);
@@ -85,7 +104,7 @@ gulp.task("zip", function() {
 
 // watch
 gulp.task("watch", function() {
-  gulp.watch("src/*.*", ["compile"]);
+  gulp.watch("src/*.*", ["build"]);
   gulp.watch("tests/*.*", ["compile-tests"]);
   gulp.watch("Artifacts/*.*", ["zip"]);
 });
