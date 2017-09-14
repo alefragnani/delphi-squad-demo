@@ -1,6 +1,7 @@
 // grab our gulp packages
 var gulp  = require('gulp'),
     gutil = require('gulp-util'),
+    zip = require('gulp-zip'),
     runSequence = require('run-sequence'),
     path = require('path'),
     fs = require('fs'),
@@ -30,6 +31,7 @@ gulp.task('default', ["create-folders"]);
 
 // create additional folders, used by the building process
 gulp.task("create-folders", function() {
+  gutil.log('create-folders:started');
   if (!fs.existsSync(path.join(__dirname, 'Artifacts'))) {
     fs.mkdirSync(path.join(__dirname, 'Artifacts'));
   }
@@ -42,7 +44,7 @@ gulp.task("create-folders", function() {
   if (!fs.existsSync(path.join(__dirname, 'Lib'))) {
     fs.mkdirSync(path.join(__dirname, 'Lib'));
   }
-  return gutil.log('CREATE-FOLDERS');
+  return gutil.log('create-folders:ended');
 });
 
 // compile the main project
@@ -99,6 +101,10 @@ gulp.task("code-coverage", function() {
 
 // zip the artifacts
 gulp.task("zip", function() {
+  return gulp.src('./Bin/**')
+    .pipe(zip('Build.zip'))
+    .pipe(gulp.dest('./Artifacts'));
+
   return gutil.log('ZIP');
 });
 
