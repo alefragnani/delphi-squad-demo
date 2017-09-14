@@ -5,13 +5,13 @@ folder.create("Lib");
 
 // compile
 delphi.build("src\\Project1.dpr", 
-  { "delphi": "xe9",
+  { "delphi": "xe10",
     "destinationFolder": "Bin",
     "dcuDestinationFolder": "Lib",
     "unitSearchPath": "src",
     "otherParameters": "-GD" });
 delphi.build("tests\\Project1Tests.dpr", 
-  { "delphi": "xe9",
+  { "delphi": "xe10",
     "destinationFolder": "Bin",
     "dcuDestinationFolder": "Lib",
     "unitSearchPath": "src",
